@@ -55,19 +55,43 @@
                     </div>
 
                     <div class="tab-pane fade" id="signup">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/index" method="POST">
                             <fieldset>
                                 <!-- Sign Up Form -->
+                                <!-- First Name  input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="first_name">First Name:</label>
+                                    <input id="firstName" name="first_name" class="form-control" type="text" required="">
+                                </div>
+
+                                <!-- Last Name input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="last_name">Last Name:</label>
+                                    <input id="last_name" name="last_name" class="form-control" type="text" required="">
+                                </div>
+
+                                <!-- Phone number input -->
+                                <div class="control-group">
+                                    <label class="control-label" for="phone">Phone Number:</label>
+                                    <input id="phone" name="phone" class="form-control" type="number" required="">
+                                </div>
+
+                                <!-- Date of Birth input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="dob">Date of Birth:</label>
+                                    <input id="dob" name="dob" class="form-control" type="number" required="">
+                                </div>
+
                                 <!-- Email input-->
                                 <div class="control-group">
                                     <label class="control-label" for="email">Email address:</label>
-                                    <input type="email" class="form-control" id="email" required="">
+                                    <input type="email" class="form-control" id="email" name="email" required="">
                                 </div>
 
-                                <!-- Text input-->
+                                <!-- UserName input-->
                                 <div class="control-group">
                                     <label class="control-label" for="userid">User ID:</label>
-                                    <input id="userid" name="userid" class="form-control" type="text" required="">
+                                    <input id="userid" name="username" class="form-control" type="text" required="">
                                 </div>
 
                                 <!-- Password input-->
@@ -77,13 +101,13 @@
                                     <em>1-8 Characters</em>
                                 </div>
 
-                                <!-- Text input-->
+                                <!-- Re-enter Password input-->
                                 <div class="control-group">
                                     <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
                                     <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" required="">
                                 </div>
 
-                                <!-- Multiple Radios (inline) -->
+                                <!-- Humanity check (inline) -->
                                 <br>
                                 <div class="control-group">
                                     <label class="control-label" for="humancheck">Humanity Check:</label>
@@ -97,11 +121,11 @@
                                     </div>
                                 </div>
 
-                                <!-- Button -->
+                                <!-- Submit Button -->
                                 <div class="control-group">
                                     <label class="control-label" for="confirmsignup"></label>
                                     <div class="controls">
-                                        <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                                        <button type="submit" id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
                                     </div>
                                 </div>
                             </fieldset>
