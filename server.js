@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const logger = require('morgan');
 
-const db = require("./app/models")
+const db = require("./app/models");
 
 
 
