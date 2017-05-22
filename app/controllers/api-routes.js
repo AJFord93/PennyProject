@@ -22,13 +22,22 @@ module.exports = (app) => {
     app.post("/index", function(req, res) {
         //console.log(req.body);
         db.User.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
             username: req.body.username,
             email: req.body.email,
-            phone: req.body.phone,
+            password: req.body.password
+        }).then(function() {
+            res.redirect("/");
+        });
+    });
+
+    app.post("/index", function(req, res) {
+        //console.log(req.body);
+        db.Profile.create({
+            username: req.body.username,
+            email: req.body.email,
             password: req.body.password,
-            dob: req.body.dob
+            first_name: req.body.first_name,
+            last_name: req.body.last_name
         }).then(function() {
             res.redirect("/");
         });
