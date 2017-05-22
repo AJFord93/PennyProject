@@ -30,4 +30,3 @@ modalContent.append(modalFooter);
 
 //Add the global Content div to the Modal-Dialog div
 //$(".modal-dialog").append(modalContent);
-
