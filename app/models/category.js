@@ -15,6 +15,17 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true,
         len: [1]
       }
+      },
+      {
+        classMethods: {
+          associate: function(models){
+            Category.hasMany(models.Question, {
+              foreignKey: {
+                allowNull: false
+              }
+            });
+          }
+        }
     });
     return Category;
   };

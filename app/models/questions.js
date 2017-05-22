@@ -19,8 +19,7 @@ module.exports = function(sequelize, DataTypes) {
               allowNull: false
             }
           });
-
-          Question.hasOne(models.Category, {
+          Question.belongsTo(models.Category, {
             foreignKey: {
               allowNull: false
             }
