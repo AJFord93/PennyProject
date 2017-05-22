@@ -8,5 +8,9 @@ module.exports = function(app){
     res.render('index', {});
   });
 
+  app.get('/app', function(req, res){
+    res.render('app', {});
+  });
+
 
 };
