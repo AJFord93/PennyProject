@@ -9,34 +9,28 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
           len: [1]
         }
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        len: [1]
-      },
-
+      }
     },
+    {
+      classMethods: {
+        associate: function(models) {
+          // An Author (foreignKey) is required or a Post can't be made
+          Question.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
 
-      {
-        // We're saying that we want our Author to have Posts
-        classMethods: {
-          associate: function(models) {
-            // An Author (foreignKey) is required or a Post can't be made
-            Question.hasOne(models.Answer, {
-              foreignKey: {
-                allowNull: false
-              }
-            });
-            Question.belongsTo(models.User, {
-              foreignKey: {
-                allowNull: false
-              }
-            });
-          }
+          Question.hasOne(models.Category, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
         }
       }
-    );
+
+    });
+
     return Question;
   };
 
