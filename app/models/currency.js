@@ -1,25 +1,25 @@
 
 module.exports = function(sequelize, DataTypes) {
 
-    let Question = sequelize.define("Question", {
+    let Currency = sequelize.define("Currency", {
 
-      question: {
-        type: DataTypes.TEXT,
+      currency_spent: {
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
-      }
+      },
+      currency_balance: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        len: [1]
+      },
     },
     {
       classMethods: {
         associate: function(models) {
-          Question.belongsTo(models.User, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-          Question.belongsTo(models.Category, {
+          Currency.belongsTo(models.User, {
             foreignKey: {
               allowNull: false
             }
@@ -29,5 +29,5 @@ module.exports = function(sequelize, DataTypes) {
 
     });
 
-    return Question;
+    return Currency;
   };
