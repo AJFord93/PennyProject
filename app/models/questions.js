@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     {
       classMethods: {
         associate: function(models) {
-          // An Author (foreignKey) is required or a Post can't be made
           Question.belongsTo(models.User, {
             foreignKey: {
               allowNull: false
@@ -33,8 +32,3 @@ module.exports = function(sequelize, DataTypes) {
 
     return Question;
   };
-
-// one to many relationship
-
-//  questiod id => answer id
-// questions and answers belong to users

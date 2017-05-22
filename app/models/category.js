@@ -15,8 +15,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true,
         len: [1]
       }
-
     });
-
     return Category;
   };

@@ -15,12 +15,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       },
-
     },
     {
       classMethods: {
         associate: function(models) {
-          // An Author (foreignKey) is required or a Post can't be made
           Currency.belongsTo(models.User, {
             foreignKey: {
               allowNull: false
