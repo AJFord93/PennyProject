@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const logger = require('morgan');
 
+
 const db = require("./app/models");
 
 
@@ -54,12 +55,24 @@ const PORT = process.env.PORT || 8080;
 //=================================================================
 app.use('/public', express.static('./app/public/'));
 
+//=================================================================
+// Passport Config
+//=================================================================
+const passport = require('passport');
+const session = require('express-session');
 
+require('./app/config/passport.js')(passport);
+
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+
+app.use(passport.initialize());
+
+app.use(passport.session()); // persistent login sessions
 
 //=================================================================
 // Configure route controllers
 //=================================================================
-require('./app/controllers/html-routes')(app);
+require('./app/controllers/html-routes')(app, passport);
 require('./app/controllers/api-routes')(app);
 
 // ================================================================
