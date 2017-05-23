@@ -1,13 +1,18 @@
 h1 {
   color: white;
+  text-shadow: 0px 3px 1px grey;
+
 }
 
 .appq {
   height: 300px;
   width: auto;
+
+
 }
 
 .appa {
   height: 300px;
   width: auto;
+
 }
