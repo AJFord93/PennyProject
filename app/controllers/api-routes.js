@@ -18,28 +18,21 @@ module.exports = (app) => {
             });
     });
 
-    //POST route for saving a new User
+    //POST route for saving a new User and creating the Profile
     app.post("/index", function(req, res) {
-        //console.log(req.body);
         db.User.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
-        }).then(function() {
-            res.redirect("/");
-        });
-    });
-
-    app.post("/index", function(req, res) {
-        //console.log(req.body);
-        db.Profile.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name
-        }).then(function() {
-            res.redirect("/");
+        }).then(function(newUser) {
+            console.log(newUser);
+            db.Profile.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                UserId: newUser.id
+            }).then(function() {
+                res.redirect("/app");
+            });
         });
     });
 
