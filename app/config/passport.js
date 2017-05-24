@@ -39,7 +39,8 @@ module.exports = function(passport) {
             // pull in our app id and secret from our auth.js file
             clientID        : configAuth.facebookAuth.clientID,
             clientSecret    : configAuth.facebookAuth.clientSecret,
-            callbackURL     : configAuth.facebookAuth.callbackURL
+            callbackURL     : configAuth.facebookAuth.callbackURL,
+            profileFields   : ['id', 'displayName', 'photos', 'email', 'first_name', 'gender', 'last_name']
 
         },
 
