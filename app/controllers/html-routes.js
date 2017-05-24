@@ -12,6 +12,14 @@ module.exports = function(app){
     res.render('app', {});
   });
 
+  app.get('/question', function(req, res){
+    res.render('question', {});
+  });
+
+  app.get('/answer', function(req, res){
+    res.render('answer', {});
+  });
+
 
 
 };
