@@ -31,7 +31,7 @@ module.exports = (app) => {
                 last_name: req.body.last_name,
                 UserId: newUser.id
             }).then(function() {
-                res.redirect("/app");
+                res.json();
             });
         });
     });
