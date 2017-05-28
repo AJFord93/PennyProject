@@ -30,8 +30,4 @@ function createQuestionPage() {
   textDiv.append(textInput);
   questionForm.append(submitBtn);
 
-  $('h1').effect('shake', 'slow');
-  $('img').effect('shake', 'slow');
-  $('form').effect('shake', 'slow');
-
 };

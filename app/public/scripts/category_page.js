@@ -67,7 +67,4 @@ function createCategoryPage() {
   fashionLink.append(fashionImg);
   fashionDiv.append(fashionLink);
 
-  $('h1').effect('bounce', 'slow');
-  $('img').effect('bounce', 'slow');
-
 }

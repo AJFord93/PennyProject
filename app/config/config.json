@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "code1310",
     "database": "penny_project",
     "host": "127.0.0.1",
     "dialect": "mysql"

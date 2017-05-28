@@ -33,8 +33,4 @@ function createAnswerPage() {
   textDiv.append(textInput);
   answerForm.append(submitBtn);
 
-  $('h1').effect('shake', 'slow');
-  $('img').effect('shake', 'slow');
-  $('form').effect('shake', 'slow');
-
 }

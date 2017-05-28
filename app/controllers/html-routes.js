@@ -14,15 +14,7 @@ module.exports = function(app, passport){
     res.render('app', {});
   });
 
-  app.get('/question', function(req, res){
-    res.render('question', {});
-  });
 
-  app.get('/answer', function(req, res){
-    res.render('answer', {});
-  });
-
-  
 // =====================================
 // FACEBOOK ROUTES =====================
 // =====================================
