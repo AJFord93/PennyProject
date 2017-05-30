@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const logger = require('morgan');
 
-
 const db = require("./app/models");
 
 
@@ -63,11 +62,13 @@ const session = require('express-session');
 
 require('./app/config/passport.js')(passport);
 
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
-
 app.use(passport.initialize());
 
 app.use(passport.session()); // persistent login sessions
+
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+
+
 
 //=================================================================
 // Configure route controllers

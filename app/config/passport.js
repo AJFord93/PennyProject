@@ -1,34 +1,19 @@
+'use strict';
+
 // =================================================================
 // Passport Configuration
-// =================================================================
+// ==========================================================
 
 //Declaring Dependencies
-var LocalStrategy    = require('passport-local').Strategy;
+var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var mysql = require('mysql');
+var db = require('../models');
 
-//loading our user model
-var User = require('../models/users');
 
 //loading our auth properties
 var configAuth = require('./auth');
 
-module.exports = function(passport) {
-
-    // used to serialize the user for the session
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
-    });
-
-    // used to deserialize the user
-    passport.deserializeUser(function(id, done) {
-        // User.findById(id, function(err, user) {
-        //     done(err, user);
-        // });
-    });
-
-    // code for login (use('local-login', new LocalStategy))
-    // code for signup (use('local-signup', new LocalStategy))
+module.exports = function(app,Profile) {
 
 // =================================================================
 // Facebook Strategies
@@ -49,12 +34,38 @@ module.exports = function(passport) {
 
             // asynchronous function in node.js
             process.nextTick(function () {
+                db.Profile.findOrCreate({where:{
 
-                console.log(profile);
-                return done(null, profile);
+                    email: profile.emails[0].value,
+                    first_name: profile.givenName,
+                    last_name: profile.familyName,
+                    imageURL: profile.photos[0].value,
+                    fbID: profile.id
+                }
+                }).spread(function(user){
+                    //console.log(profile);
+                    return done(null, user);
+                });
 
             });
 
         }));
+
+    // used to serialize the user for the session
+    passport.serializeUser(function(user, done) {
+        done(null, user.id);
+    });
+
+    // used to deserialize the user
+    passport.deserializeUser(function(id, done) {
+        db.Profile.find({
+            where:{
+                fbID: id
+            }
+        }).then(function(user){
+            if (!user) return done(new Error('Invalid user'));
+            return done(null,user);
+        })
+    });
 
 }; //end of module.exports
