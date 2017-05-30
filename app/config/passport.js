@@ -37,8 +37,8 @@ module.exports = function(app,Profile) {
                 db.Profile.findOrCreate({where:{
 
                     email: profile.emails[0].value,
-                    first_name: profile.givenName,
-                    last_name: profile.familyName,
+                    first_name: profile.name.givenName,
+                    last_name: profile.name.familyName,
                     imageURL: profile.photos[0].value,
                     fbID: profile.id
                 }
