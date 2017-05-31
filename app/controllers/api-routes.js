@@ -36,7 +36,7 @@ module.exports = (app) => {
         });
     });
 
-/*
+
     //Post request is called with AJAX in choices.js
     //Post route to save a selected category to the database
     app.post('/app', function(req, res) {
@@ -48,7 +48,7 @@ module.exports = (app) => {
         res.redirect('/app');
       }).catch(err => console.log(err.message));
     });
-*/
+
 
     // Post route to create a question and save it to the database
     app.post('/app', function(req, res) {
