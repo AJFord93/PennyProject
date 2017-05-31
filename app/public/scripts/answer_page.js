@@ -10,7 +10,7 @@ function createAnswerPage() {
     .css('width', '300px').css('height', 'auto');
   const answerDiv = $('<div>').addClass('col-lg-6 answer');
   const questionToAnswer = $('<p>').text('Question from the database')
-    .css('font-family', 'sans-serif').css('color', '#fff'); // Get from the database
+    .css('font-family', 'sans-serif').css('color', '#fff');
   const answerForm = $('<form>').attr('method', 'POST').attr('action', '/app')
     .attr('id', 'answer-a-question');
   const textDiv = $('<div>').addClass('form-group');
