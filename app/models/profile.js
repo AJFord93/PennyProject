@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
 
     imageURL: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     dob: {
       type: DataTypes.STRING,
@@ -27,6 +27,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
       len: [1]
+    },
+    fbID: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
   },
     {
@@ -34,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
         associate: function(models) {
           Profile.belongsTo(models.User, {
             foreignKey: {
-              allowNull: false
+              allowNull: true
             }
           });
         }
