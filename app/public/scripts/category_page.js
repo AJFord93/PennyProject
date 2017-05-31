@@ -6,6 +6,7 @@ function createCategoryPage() {
   const categoryForm = $('<form>').attr('method', 'POST').attr('action', '/app').attr('id', 'select-a-category');
   const formGroup = $('<div>').addClass('form-group');
 
+
   const row1 = $('<div>').addClass('row');
 
   const loveDiv = $('<div>').addClass('col-lg-3 category');
@@ -38,6 +39,9 @@ function createCategoryPage() {
   const fashionInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Fashion.png').attr('alt', 'submit').attr('data-name', 'fashion')
     .css('width', '200px').css('height', '200px');
 
+  const row3 = $('<div>').addClass('row');
+  const progressDiv = $('<div>').addClass('col-lg-12 progressBtns');
+  const backInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').attr('alt', 'submit').attr('data-name', 'back').addClass('backbtn refresh');
 
   $('.wrapper').append(div1);
   div1.append(div2);
@@ -70,5 +74,18 @@ function createCategoryPage() {
   row2.append(fashionDiv);
   fashionDiv.append(fashionInput);
 
+  formGroup.append(row3);
 
+  row3.append(progressDiv);
+  progressDiv.append(backInput);
+
+
+  $(document).on('click', '.refresh', function(e){
+    e.preventDefault();
+    window.location.replace('/app');
+
+
+
+
+  });
 }

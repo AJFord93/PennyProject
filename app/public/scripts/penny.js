@@ -7,6 +7,7 @@ const modalContent = $("<div>").addClass("modal-content");
 
 //Header Div
 const modalHeader = $("<div>").addClass("modal-header");
+
 //Add the close button to the Header
 modalHeader.append("<button type='button' class='close' data-dismiss='modal'>" + "&times;" + "</button>");
 //Add the title to the Header
