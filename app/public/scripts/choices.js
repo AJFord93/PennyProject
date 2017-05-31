@@ -30,16 +30,32 @@ $('#answer-cloud').on('click', function(e) {
 function chooseCategory(choice) {
   $(document).on('click', '.category', function(e) {
     e.preventDefault();
-    let category = $(this).attr('id');
+
+    let category = $(this).find('input').attr('data-name');
     console.log(category); // Save to the database
 
-    $(document).off();
-    $('.wrapper').empty();
 
-    if(choice === 'question-cloud') {
-      createQuestionPage();
-    } else {
-      createAnswerPage();
-    }
+    $.ajax({
+      type: "POST",
+      url: '/app',
+      data: {category: category},
+      success: function(data) {
+        //console.log(data);
+      }
+
+
+    });
+
+
+      $(document).off();
+      $('.wrapper').empty();
+
+      if(choice === 'question-cloud') {
+        createQuestionPage();
+      } else {
+        createAnswerPage();
+      }
+  
+
   });
 }
