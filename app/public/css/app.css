@@ -30,7 +30,7 @@ p {
 .backbtn {
   height: 225px;
   width: auto;
-  float: left;
+  align-content: center;
 }
 
 .startbtn {

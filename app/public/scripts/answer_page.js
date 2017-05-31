@@ -20,6 +20,12 @@ function createAnswerPage() {
   const submitBtn = $('<button>').text('Submit').attr('type', 'submit')
     .addClass('btn btn-default').css('float', 'right');
 
+
+  const row = $('<div>').addClass('row');
+  const backBtnDiv = $('<div>').addClass('col-lg-12');
+  const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats');
+
+
   $('.wrapper').append(heading);
   heading.append(h1);
   heading.append(answerAQuestion);
@@ -33,4 +39,26 @@ function createAnswerPage() {
   textDiv.append(textInput);
   answerForm.append(submitBtn);
 
+  answerCloud.append(row);
+  row.append(backBtnDiv);
+  backBtnDiv.append(genCatBtn);
+
+  $(document).on('click', '#genCats', function(b){
+    b.preventDefault();
+    
+    let choice = $(this).attr('id');
+    console.log(choice);
+
+    $('#answer-cloud').off();
+    $('.wrapper').empty();
+    createCategoryPage();
+    chooseCategory(choice);
+  });
+
+
 }
+
+
+
+
+// Progress Buttons
