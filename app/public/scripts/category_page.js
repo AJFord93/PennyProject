@@ -15,7 +15,7 @@ function createCategoryPage() {
 
   const lifeDiv = $('<div>').addClass('col-lg-3 category');
   const lifeInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Life.png').attr('alt', 'submit').attr('data-name', 'life')
-    .css('width', '200px').css('height', '200px');
+    .css('width', '200px').css('height', '200px').addClass('img-rounded');
 
   const familyDiv = $('<div>').addClass('col-lg-3 category');
   const familyInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Family.png').attr('alt', 'submit').attr('data-name', 'family')

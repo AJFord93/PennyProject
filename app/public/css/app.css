@@ -36,3 +36,11 @@ p {
 .startbtn {
   float: right;
 }
+
+#answer-cloud {
+  display: none;
+}
+
+#question-cloud {
+  display: none;
+}
