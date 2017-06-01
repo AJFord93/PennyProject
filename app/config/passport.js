@@ -38,16 +38,21 @@ module.exports = function(app,Profile) {
                 db.User.findOrCreate({where:{
 
                     fbID: profile.id,
-                    email: profile.emails[0].value
+                    email: profile.emails[0].value,
+                    username: profile.id,
+                    password: profile.id
 
 
-                }}).then(function(){
+                }}).spread(function(user){
+
+
                     db.Profile.findOrCreate({where:{
 
 
                         first_name: profile.name.givenName,
                         last_name: profile.name.familyName,
-                        imageURL: profile.photos[0].value
+                        imageURL: profile.photos[0].value,
+                        UserId: user.id
 
                     }
                     }).spread(function(user){

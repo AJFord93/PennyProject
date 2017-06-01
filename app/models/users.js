@@ -9,14 +9,14 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     fbID: {
-        type: DataTypes.STRING,
-        allowNull: true
+      type: DataTypes.STRING,
+      allowNull: true
 
     },
 
     username: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       len: [1, 20]
     }
 },
