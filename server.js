@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const logger = require('morgan');
 
 const db = require("./app/models");
-
+const router = express.Router();
 
 
 //=================================================================

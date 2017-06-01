@@ -44,7 +44,7 @@ function createQuestionPage() {
 
     $('#question-cloud').off();
     setTimeout(function(){
-      console.log(choice);
+      // console.log(choice);
 
       $('.wrapper').empty();
       createCategoryPage();
