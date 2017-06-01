@@ -52,32 +52,48 @@ function createCategoryPage() {
   formGroup.append(row1);
 
   row1.append(loveDiv);
-  loveDiv.append(loveInput);
+  setTimeout(function(){
+  loveDiv.append(loveInput).effect('bounce', 1350);
+}, 200);
 
   row1.append(lifeDiv);
-  lifeDiv.append(lifeInput);
+  setTimeout(function(){
+    lifeDiv.append(lifeInput).effect('bounce', 1350);
+  }, 500);
 
   row1.append(familyDiv);
-  familyDiv.append(familyInput);
+  setTimeout(function(){
+  familyDiv.append(familyInput).effect('bounce', 1350);
+  }, 800);
 
   row1.append(homeDiv);
-  homeDiv.append(homeInput);
+  setTimeout(function(){
+  homeDiv.append(homeInput).effect('bounce', 1350);
+  }, 1100);
 
   formGroup.append(row2);
 
   row2.append(sportsDiv);
-  sportsDiv.append(sportsInput);
+  setTimeout(function(){
+  sportsDiv.append(sportsInput).effect('bounce', 1350);
+  }, 1400);
 
   row2.append(politicsDiv);
-  politicsDiv.append(politicsInput);
+  setTimeout(function(){
+  politicsDiv.append(politicsInput).effect('bounce', 1350);
+  }, 1700);
 
   row2.append(fashionDiv);
-  fashionDiv.append(fashionInput);
+  setTimeout(function(){
+  fashionDiv.append(fashionInput).effect('bounce', 1350);
+  }, 2000);
 
   formGroup.append(row3);
 
   row3.append(progressDiv);
-  progressDiv.append(backInput);
+  setTimeout(function(){
+  progressDiv.append(backInput).effect('bounce', 1350);
+}, 2300)
 
 
   $(document).on('click', '.refresh', function(e){

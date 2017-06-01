@@ -1,5 +1,6 @@
 // Choice: Ask a question
 
+  $('<h1>').fadeIn(1400);
   $('#question-cloud').fadeIn(1400);
   $('#answer-cloud').fadeIn(1400);
 
