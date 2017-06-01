@@ -8,9 +8,15 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER
     },
 
+    fbID: {
+        type: DataTypes.STRING,
+        allowNull: true
+
+    },
+
     username: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     email: {
       type: DataTypes.STRING,
@@ -21,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: [1, 20]
     }
 },
@@ -31,12 +37,12 @@ module.exports = function(sequelize, DataTypes) {
         associate: function(models) {
           User.hasMany(models.Question, {
             foreignKey: {
-              allowNull: false
+              allowNull: true
             }
           });
           User.hasMany(models.Answer, {
             foreignKey: {
-              allowNull: false
+              allowNull: true
             }
           });
         }

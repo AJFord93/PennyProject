@@ -34,20 +34,29 @@ module.exports = function(app,Profile) {
 
             // asynchronous function in node.js
             process.nextTick(function () {
-                db.Profile.findOrCreate({where:{
 
-                    email: profile.emails[0].value,
-                    first_name: profile.name.givenName,
-                    last_name: profile.name.familyName,
-                    imageURL: profile.photos[0].value,
-                    fbID: profile.id
-                }
-                }).spread(function(user){
-                    //console.log(profile);
-                    return done(null, user);
+                db.User.findOrCreate({where:{
+
+                    fbID: profile.id,
+                    email: profile.emails[0].value
+
+
+                }}).then(function(){
+                    db.Profile.findOrCreate({where:{
+
+
+                        first_name: profile.name.givenName,
+                        last_name: profile.name.familyName,
+                        imageURL: profile.photos[0].value
+
+                    }
+                    }).spread(function(user){
+
+                        return done(null, user);
+                    });
                 });
 
-            });
+            });//end of asynch
 
         }));
 
