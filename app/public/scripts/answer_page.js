@@ -23,7 +23,7 @@ function createAnswerPage() {
 
   const row = $('<div>').addClass('row');
   const backBtnDiv = $('<div>').addClass('col-lg-12');
-  const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats');
+  const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats').attr('data-name', 'button');
 
 
   $('.wrapper').append(heading);
@@ -45,8 +45,8 @@ function createAnswerPage() {
 
   $(document).on('click', '#genCats', function(b){
     b.preventDefault();
-    
-    let choice = $(this).attr('id');
+
+    let choice = 'answer-cloud';
     console.log(choice);
 
     $('#answer-cloud').off();

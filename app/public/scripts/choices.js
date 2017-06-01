@@ -1,14 +1,26 @@
 // Choice: Ask a question
+ $("#demo01").animatedModal();
+
+  $('<h1>').fadeIn(1400);
+  $('#question-cloud').fadeIn(1400);
+  $('#answer-cloud').fadeIn(1400);
+
 $('#question-cloud').on('click', function(e) {
   e.preventDefault();
 
   let choice = $(this).attr('id');
-  console.log(choice);
+  // console.log(choice);
 
   $('#question-cloud').off();
-  $('.wrapper').empty();
-  createCategoryPage();
-  chooseCategory(choice);
+  $( "#question-cloud" ).effect( "puff", 1800 );
+
+  setTimeout(function(){
+    $('.wrapper').empty();
+    createCategoryPage();
+    chooseCategory(choice);
+
+  }, 1700);
+
 });
 
 
@@ -17,12 +29,17 @@ $('#answer-cloud').on('click', function(e) {
   e.preventDefault();
 
   let choice = $(this).attr('id');
-  console.log(choice);
+  // console.log(choice);
 
   $('#answer-cloud').off();
-  $('.wrapper').empty();
-  createCategoryPage();
-  chooseCategory(choice);
+  $( "#answer-cloud" ).effect( "puff", 2000 );
+
+  setTimeout(function(){
+    $('.wrapper').empty();
+    createCategoryPage();
+    chooseCategory(choice);
+
+  }, 1700);
 });
 
 
@@ -32,7 +49,7 @@ function chooseCategory(choice) {
     e.preventDefault();
 
     let category = $(this).find('input').attr('data-name');
-    console.log(category); // Save to the database
+    // console.log(category); // Save to the database
 
 
     $.ajax({
@@ -55,7 +72,7 @@ function chooseCategory(choice) {
       } else {
         createAnswerPage();
       }
-  
+
 
   });
 }

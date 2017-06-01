@@ -19,8 +19,10 @@ font-size: 40px;
   position: relative;
   left: 15%;
   opacity: 0.8
+
 }
 
 .startbtn:hover {
   opacity: 1;
+  cursor:pointer;
 }

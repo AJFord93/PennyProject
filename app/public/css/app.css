@@ -36,3 +36,15 @@ p {
 .startbtn {
   float: right;
 }
+
+#answer-cloud {
+  display: none;
+}
+
+#question-cloud {
+  display: none;
+}
+
+[data-name]:hover {
+  opacity: 0.5;
+}
