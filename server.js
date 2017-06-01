@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const logger = require('morgan');
 
 const db = require("./app/models");
-const router = express.Router();
+
 
 
 //=================================================================
@@ -57,10 +57,11 @@ app.use('/public', express.static('./app/public/'));
 //=================================================================
 // Passport Config
 //=================================================================
-const passport = require('passport');
 const session = require('express-session');
+const passport = require('passport');
 
 require('./app/config/passport.js')(passport);
+
 
 app.use(passport.initialize());
 
@@ -70,11 +71,12 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 
 
 
+
 //=================================================================
 // Configure route controllers
 //=================================================================
 require('./app/controllers/html-routes')(app, passport);
-require('./app/controllers/api-routes')(app);
+require('./app/controllers/api-routes')(app, passport);
 
 // ================================================================
 // Catch 404 errors, render 404 page with message.
