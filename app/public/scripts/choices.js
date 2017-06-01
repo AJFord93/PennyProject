@@ -1,4 +1,5 @@
 // Choice: Ask a question
+ $("#demo01").animatedModal();
 
   $('<h1>').fadeIn(1400);
   $('#question-cloud').fadeIn(1400);
