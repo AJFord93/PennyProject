@@ -20,7 +20,7 @@ function createQuestionPage() {
 
     const row = $('<div>').addClass('row');
     const backBtnDiv = $('<div>').addClass('col-lg-12');
-    const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats');
+    const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats').attr('data-name', 'button');
 
   $('.wrapper').append(heading);
   heading.append(h1);
@@ -39,14 +39,18 @@ function createQuestionPage() {
 
   $(document).on('click', '#genCats', function(b){
     b.preventDefault();
-
-    let choice = $(this).attr('id');
-    console.log(choice);
+    $(quesImg).effect('puff', 1500);
+    let choice = 'question-cloud';
 
     $('#question-cloud').off();
-    $('.wrapper').empty();
-    createCategoryPage();
-    chooseCategory(choice);
+    setTimeout(function(){
+      console.log(choice);
+
+      $('.wrapper').empty();
+      createCategoryPage();
+      chooseCategory(choice);
+    }, 1500)
+
   });
 
 };

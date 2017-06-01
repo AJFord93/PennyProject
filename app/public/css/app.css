@@ -44,3 +44,7 @@ p {
 #question-cloud {
   display: none;
 }
+
+[data-name]:hover {
+  opacity: 0.5;
+}
