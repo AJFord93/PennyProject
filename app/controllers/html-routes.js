@@ -11,7 +11,7 @@ module.exports = function(app, passport){
     res.render('index', {title: "A Penny For Your Thoughts", layout: 'index'});
   });
 
-  app.get('/app',  function(req, res){
+  app.get('/app', isLoggedIn,  function(req, res){
     res.render('app', {});
   });
 
@@ -30,6 +30,8 @@ module.exports = function(app, passport){
             res.redirect('/app')
         });
 
+
+
     // route for logging out
     app.get('/logout', function(req, res) {
         req.logout();
@@ -43,8 +45,10 @@ module.exports = function(app, passport){
 
         // if user is authenticated in the session, carry on
         if (req.isAuthenticated())
+        console.log("HERE COMES USER ID!!! --------!!_!_!_!_!__!_!");
+        console.log(req.user);
+        console.log("HELLO WORLD -------!_!_!_!_!_!_!---------");
             return next();
-
         // if they aren't redirect them to the home page
         res.redirect('/');
     }

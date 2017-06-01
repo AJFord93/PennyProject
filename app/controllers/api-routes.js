@@ -1,6 +1,7 @@
 const db = require('../models');
 
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
 
 
@@ -14,7 +15,7 @@ module.exports = (app) => {
         db.User.findAll({})
             .then(function(data) {
                 //console.log(data);
-                const hbsObject = {
+                let hbsObject = {
                     foobar: data
                 };
                 //console.log(hbsObject);
@@ -22,6 +23,17 @@ module.exports = (app) => {
             });
     });
 
+    app.get("/questions/:id", function(req, res) {
+        db.Question.findAll({})
+            .then(function(data) {
+                //console.log(data);
+                let hbsObject = {
+                    questions: data
+                };
+                //console.log(hbsObject);
+                res.json(hbsObject);
+            });
+    });
     //POST route for saving a new User and creating the Profile
     app.post("/index", function(req, res) {
         db.User.create({
@@ -40,6 +52,10 @@ module.exports = (app) => {
         });
     });
 
+
+    // app.get('/app', loggedIn, function(req, res, next) {
+    //   console.log(req.user);
+    // });
 
     //Post request is called with AJAX in choices.js
     //Post route to save a selected category to the database
