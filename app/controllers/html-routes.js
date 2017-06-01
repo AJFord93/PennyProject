@@ -11,7 +11,7 @@ module.exports = function(app, passport){
     res.render('index', {title: "A Penny For Your Thoughts", layout: 'index'});
   });
 
-  app.get('/app', function(req, res){
+  app.get('/app',  function(req, res){
     res.render('app', {});
   });
 
