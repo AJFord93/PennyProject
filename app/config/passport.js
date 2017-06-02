@@ -74,7 +74,7 @@ module.exports = function(app,Profile) {
     passport.deserializeUser(function(id, done) {
         db.Profile.find({
             where:{
-                fbID: id
+                UserId: id
             }
         }).then(function(user){
             if (!user) return done(new Error('Invalid user'));

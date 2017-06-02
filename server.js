@@ -62,12 +62,12 @@ const passport = require('passport');
 
 require('./app/config/passport.js')(passport);
 
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // express session secret
 
 app.use(passport.initialize());
 
 app.use(passport.session()); // persistent login sessions
 
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 
 
 
@@ -89,7 +89,7 @@ app.use((req, res) => {
 // Grab env port and start listening on all network interfaces
 //=================================================================
 
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
