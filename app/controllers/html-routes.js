@@ -15,6 +15,17 @@ module.exports = function(app, passport){
     res.render('app', {});
   });
 
+// =====================================
+// Passport-local ROUTES ===============
+// =====================================
+
+    app.post('/login',
+        passport.authenticate('local', { failureRedirect: '/login' }),
+        function(req, res) {
+            res.cookie('signIn', 'true');
+            res.redirect('/app');
+        });
+
 
 // =====================================
 // FACEBOOK ROUTES =====================
