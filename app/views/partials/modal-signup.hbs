@@ -47,7 +47,10 @@
                                     <!-- Button -->
                                     <label class="control-label" for="signin"></label>
                                     <div class="controls">
-                                        <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                                        <form action="/login" method="post">
+                                            <input type="hidden">
+                                            <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                                        </form>
                                     </div>
                                 </div>
                             </fieldset>
