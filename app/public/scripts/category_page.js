@@ -41,7 +41,7 @@ function createCategoryPage() {
 
   const row3 = $('<div>').addClass('row');
   const progressDiv = $('<div>').addClass('col-lg-12 progressBtns');
-  const backInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').attr('alt', 'submit').attr('data-name', 'back').addClass('backbtn refresh');
+  const backInput = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').attr('alt', 'submit').attr('data-name', 'back').addClass('backbtn refresh').css('margin-bottom', '40px');
 
   $('.wrapper').append(div1);
   div1.append(div2);
@@ -93,15 +93,11 @@ function createCategoryPage() {
   row3.append(progressDiv);
   setTimeout(function(){
   progressDiv.append(backInput).effect('bounce', 1350);
-}, 2300)
+}, 2300);
 
 
   $(document).on('click', '.refresh', function(e){
     e.preventDefault();
     window.location.replace('/app');
-
-
-
-
   });
 }
