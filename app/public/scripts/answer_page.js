@@ -23,7 +23,7 @@ function createAnswerPage() {
 
   const row = $('<div>').addClass('row');
   const backBtnDiv = $('<div>').addClass('col-lg-12');
-  const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats').attr('data-name', 'button').css('margin', '40px 0 0 50px');
+  const genCatBtn = $('<input>').attr('type', 'image').attr('src', '../public/img/Back.png').addClass('backbtn').attr('id', 'genCats').attr('data-name', 'button').css('margin', '40px 0 40px 50px');
 
 
   $('.wrapper').append(heading);
@@ -45,14 +45,17 @@ function createAnswerPage() {
 
   $(document).on('click', '#genCats', function(b){
     b.preventDefault();
+    $(answerImg).effect('puff', 1500);
 
     let choice = 'answer-cloud';
     console.log(choice);
 
     $('#answer-cloud').off();
-    $('.wrapper').empty();
-    createCategoryPage();
-    chooseCategory(choice);
+    setTimeout(function(){
+        $('.wrapper').empty();
+        createCategoryPage();
+        chooseCategory(choice);
+    }, 1500)
   });
 
 

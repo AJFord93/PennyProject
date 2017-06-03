@@ -8,32 +8,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-md-offset-2 text-center" id="question-cloud">
+            <div class="col-md-6 text-center" id="question-cloud">
                 <a href="#"><img class="appq" src="../public/img/cloud_question.png"></a>
             </div>
-            <div class="col-md-3 col-md-offset-2 text-center" id="answer-cloud">
+            <div class="col-md-6 text-center" id="answer-cloud">
                 <a href="#"><img class="appa" src="../public/img/cloud_answer.png"></a>
             </div>
         </div>
     </div>
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="col-lg-12">
-        <div class="row text-center">
-            <div class="col-md-3">
-                <br>
-                <p>Logged in as: <span id="username">[name]</span></p>
-            </div>
-            <div class="col-md-3">
-                <br>
-                <p><span><img src="../public/img/penny.png" alt="token" width="30px" height="30px"></span> Pennies:<span id="token-value">[value]</span></p>
-            </div>
-            <div class="col-md-3">
-                <br>
-                <p> &copy; Penny Project {{getCurrentYear}}</p>
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-danger navbar-btn btn-sm" id="sign-out" href="/logout/">Sign Out</button>
-            </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="footer-span">Logged in as: <span id="username">[name]</span></li>
+                <li class="footer-span"><span><img src="../public/img/penny.png" alt="token" width="20px"></span> Pennies:<span id="token-value">[value]</span</li>
+                <li class="footer-span"> &copy; Penny Project {{getCurrentYear}}</li>
+            </ul>
         </div>
-    </div>
-</nav>
+    </footer>
