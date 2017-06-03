@@ -1,5 +1,5 @@
-MYSQL_HOST=''
+MYSQL_HOST='d6vscs19jtah8iwb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
 MYSQL_PORT=3306
-MYSQL_USER=''
-MYSQL_PASSWORD=''
-MYSQL_DATABASE=''
+MYSQL_USER='em9t6a6i7rd5sbt5'
+MYSQL_PASSWORD='ev47u57egvsvhmkz'
+MYSQL_DATABASE='tlak4xa1p36t7qd5'
