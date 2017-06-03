@@ -6,6 +6,7 @@
 
 //Declaring Dependencies
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var db = require('../models');
 
@@ -14,6 +15,23 @@ var db = require('../models');
 var configAuth = require('./auth');
 
 module.exports = function(app,Profile) {
+
+// =================================================================
+// Local Strategies
+// =================================================================
+
+    passport.use(new LocalStrategy(
+        function(username, password, done) {
+            User.findOne({ username: username }, function (err, user) {
+                if (err) { return done(err); }
+                if (!user) { return done(null, false); }
+                if (!user.verifyPassword(password)) { return done(null, false); }
+                return done(null, user);
+            });
+        }
+    ));
+
+
 
 // =================================================================
 // Facebook Strategies
@@ -74,7 +92,7 @@ module.exports = function(app,Profile) {
     passport.deserializeUser(function(id, done) {
         db.Profile.find({
             where:{
-                fbID: id
+                UserId: id
             }
         }).then(function(user){
             if (!user) return done(new Error('Invalid user'));

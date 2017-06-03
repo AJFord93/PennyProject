@@ -62,12 +62,12 @@ const passport = require('passport');
 
 require('./app/config/passport.js')(passport);
 
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // express session secret
 
 app.use(passport.initialize());
 
 app.use(passport.session()); // persistent login sessions
 
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 
 
 
